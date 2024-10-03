@@ -11,7 +11,10 @@ def main():
     
 
     while True:
-        pygame.Surface.fill(0, 0, 0)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+        screen.fill((0,0,0))
         pygame.display.flip()
 
 if __name__ == "__main__":
