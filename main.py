@@ -3,6 +3,7 @@ from constants import *
 from player import *
 from asteroid import *
 from asteroidfield import *
+from shot import *
 
 def main():
     print("Starting asteroids!")
@@ -20,9 +21,11 @@ def main():
     Player.containers = (updatable, drawable)
     Asteroid.containers = (updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (updatable)
     
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroidfield = AsteroidField()
+    shot = Shot(player.position.x, player.position.y)
     
     while True:
         for event in pygame.event.get():
